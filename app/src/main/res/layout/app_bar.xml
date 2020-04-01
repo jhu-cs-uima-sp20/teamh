@@ -16,7 +16,10 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme"
+            app:title="@string/app_name"
+            app:titleMarginStart="150dp" />
 
 
     </com.google.android.material.appbar.AppBarLayout>
