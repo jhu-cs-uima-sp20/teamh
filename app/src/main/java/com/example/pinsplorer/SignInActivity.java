@@ -24,7 +24,12 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View v) {
                Intent intent = new Intent(v.getContext(), MainActivity.class);
                startActivity(intent);
+
             }
         });
+    }
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }
