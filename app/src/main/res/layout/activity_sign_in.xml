@@ -7,15 +7,7 @@
     android:background="@color/colorPrimaryLight"
     tools:context=".SignInActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/signInToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:elevation="4dp"
-        android:gravity="center"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <include layout="@layout/app_bar" />
     <EditText
         android:id="@+id/userNameInput"
         android:layout_width="330dp"
