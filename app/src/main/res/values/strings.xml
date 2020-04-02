@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PinSplorer</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="hello_blank_fragment">blank fragment</string>
+</resources>
