@@ -5,10 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".BrowseFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:layout_height="510dp"
+        android:layout_marginVertical="100dp"
+        android:text="I am the browse pinsets screen"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="40sp" />
 </FrameLayout>
