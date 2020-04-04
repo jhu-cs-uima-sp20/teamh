@@ -70,4 +70,12 @@ public class MainActivity extends AppCompatActivity {
         // Commit the transaction
         transaction.commit();
     }
+
+//    public void switchContent(int id, Fragment fragment) {
+//        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//        ft.replace(id, fragment, fragment.toString());
+//        ft.addToBackStack(null);
+//        ft.commit();
+//    }
+    //TODO: not quite working
 }
