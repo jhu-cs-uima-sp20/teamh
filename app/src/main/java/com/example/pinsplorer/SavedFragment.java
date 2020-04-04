@@ -30,7 +30,8 @@ public class SavedFragment extends Fragment {
     private String mParam2;
 
     protected static RecyclerView PinSetRecycler;
-    protected static ArrayList<PinSet> PinSetList = new ArrayList<>(Arrays.asList(new PinSet("Baltimore Eats"), new PinSet("Campus Buildings")));
+    protected static ArrayList<PinSet> PinSetList = new ArrayList<>(Arrays.asList(new PinSet("Baltimore Eats"),
+            new PinSet("Campus Buildings"), new PinSet("Great Sidewalks <3"), new PinSet("Tourist Attractions")));
 
     public SavedFragment() {
         // Required empty public constructor

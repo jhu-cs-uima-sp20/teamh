@@ -1,6 +1,7 @@
 package com.example.pinsplorer;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,13 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
     @Override
     public void onBindViewHolder(@NonNull PinSetViewHolder holder, int position) {
         holder.name.setText(pinSetList.get(position).getName());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //****TODO Take user to ViewSetFragment
+            }
+        });
     }
 
     @Override
