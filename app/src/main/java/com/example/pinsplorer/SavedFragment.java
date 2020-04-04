@@ -3,10 +3,15 @@ package com.example.pinsplorer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -23,6 +28,15 @@ public class SavedFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    protected static RecyclerView PinSetRecycler;
+    protected static ArrayList<PinSet> PinSetList =
+            new ArrayList<>(
+                    Arrays.asList(new PinSet("Baltimore Eats"),
+                            new PinSet("Campus Buildings"),
+                            new PinSet("Great Sidewalks <3"),
+                            new PinSet("Tourist Attractions", 5, 71, "Me"),
+                            new PinSet("Cool Museums", 8, 27, "Me")));
 
     public SavedFragment() {
         // Required empty public constructor
@@ -60,5 +74,16 @@ public class SavedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_saved, container, false);
+    }
+
+    // Called at the start of the visible lifetime.
+    @Override
+    public void onStart(){
+        super.onStart();
+        PinSetRecycler = getView().findViewById(R.id.pinSetRecyclerView);
+        PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));
+        PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
+
+
     }
 }
