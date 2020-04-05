@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void createCreatePinSetButtonListener() {
-        Button profile = findViewById(R.id.button_to_add_pinset);
-        profile.setOnClickListener(new View.OnClickListener() {
+        Button addPinSetBtn = findViewById(R.id.button_to_add_pinset);
+        addPinSetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switchFragment(new CreatePinSetFragment());

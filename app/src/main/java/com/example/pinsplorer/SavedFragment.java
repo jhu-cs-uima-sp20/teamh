@@ -83,7 +83,5 @@ public class SavedFragment extends Fragment {
         PinSetRecycler = getView().findViewById(R.id.pinSetRecyclerView);
         PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));
         PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
-
     }
 }
