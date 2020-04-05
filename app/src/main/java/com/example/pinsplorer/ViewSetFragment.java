@@ -3,10 +3,15 @@ package com.example.pinsplorer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -23,6 +28,13 @@ public class ViewSetFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    protected static RecyclerView pinRecycler;
+    protected static ArrayList<Pin> PinList =
+            new ArrayList<>(
+                    Arrays.asList(new Pin("Inner Harbor", "Visited 3/13/20", "Historic harbor of Baltimore"),
+                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce"),
+                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights")));
 
     public ViewSetFragment() {
         // Required empty public constructor
@@ -60,5 +72,13 @@ public class ViewSetFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_view_set, container, false);
+    }
+
+    @Override
+    public void onStart(){
+        super.onStart();
+        pinRecycler = getView().findViewById(R.id.pinRecyclerView);
+        pinRecycler.setAdapter(new PinRecyclerAdapter(PinList));
+        pinRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
 }

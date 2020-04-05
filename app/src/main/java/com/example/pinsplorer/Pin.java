@@ -46,4 +46,28 @@ public class Pin implements Parcelable {
         dest.writeString(visited);
         dest.writeString(description);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getVisited() {
+        return visited;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setVisited(String visited) {
+        this.visited = visited;
+    }
 }
