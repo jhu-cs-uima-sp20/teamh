@@ -11,7 +11,7 @@
         android:id="@+id/pinSetRecyclerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +19,7 @@
     <EditText
         android:id="@+id/saved_search"
         android:layout_width="357dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:autofillHints="@android:string/search_go"
         android:ems="10"
