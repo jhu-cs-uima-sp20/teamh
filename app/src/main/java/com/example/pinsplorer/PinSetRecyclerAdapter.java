@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -38,7 +40,11 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //****TODO Take user to ViewSetFragment
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new Fragment();
+                activity.getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.fragment_view_set, myFragment)
+                        .addToBackStack(null).commit();
             }
         });
     }
