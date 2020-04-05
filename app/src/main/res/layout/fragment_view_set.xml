@@ -6,10 +6,12 @@
     tools:context=".ViewSetFragment"
     android:id="@+id/fragment_view_set">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:layout_height="510dp"
+        android:layout_marginVertical="100dp"
+        android:text="I am the View Pin Set screen"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="40sp" />
 </FrameLayout>

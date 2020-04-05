@@ -1,5 +1,6 @@
 package com.example.pinsplorer;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -52,24 +53,23 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
     }
 
     //TODO: almost working except for line 59.
-//    private void fragmentJump(PinSet mItemSelected) {
-//        ViewSetFragment frag = new ViewSetFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putParcelable("item_selected_key", (Parcelable) mItemSelected);
-//        ViewSetFragment.setArguments(bundle);
-//        switchContent(R.id.pin_set_view_holder, frag);
-//    }
+    private void fragmentJump(PinSet mItemSelected) {
+        ViewSetFragment frag = new ViewSetFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("item_selected_key", mItemSelected);
+        frag.setArguments(bundle);
+        switchContent(R.id.pin_set_view_holder, frag);
+    }
 //
-//    public void switchContent(int id, Fragment fragment) {
-//        if (context == null)
-//            return;
-//        if (context instanceof MainActivity) {
-//            MainActivity mainActivity = (MainActivity) context;
-//            Fragment frag = fragment;
-//            mainActivity.switchContent(id, frag);
-//        }
+    public void switchContent(int id, Fragment fragment) {
+        if (context == null)
+            return;
+        if (context instanceof MainActivity) {
+            MainActivity mainActivity = (MainActivity) context;
+            mainActivity.switchFragment(fragment);
+        }
 //
-//    }
+    }
 
 
 

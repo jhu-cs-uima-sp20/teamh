@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SAVEDPINSETS = 0;
     private static final int BROWSEPINSETS = 1;
     private static final int EDITPROFILE = 2;
+    public static MainActivity MAINACTIVITY;
 
     private Fragment saved_pinsets, browse_pinsets, edit_profile;
     private SharedPreferences myPref;
@@ -25,13 +26,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MAINACTIVITY = this;
         setContentView(R.layout.activity_main);
-        FragmentManager manager = getSupportFragmentManager();
-        FragmentTransaction trans = manager.beginTransaction();
-        Fragment frag = new SavedFragment();
-        trans.replace(R.id.fragment_cont, frag);
-        trans.addToBackStack(null);
-        trans.commit();
+        switchFragment(new SavedFragment());
         Button profile = findViewById(R.id.button);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override

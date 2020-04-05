@@ -1,8 +1,10 @@
 package com.example.pinsplorer;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.ImageView;
 
-class PinSet {
+class PinSet implements Parcelable {
 
     private ImageView image;
     private String name;
@@ -55,5 +57,15 @@ class PinSet {
 
     public void setCreator(String creator) {
         this.creator = creator;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
     }
 }
