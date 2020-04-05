@@ -23,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
         MAINACTIVITY = this;
         setContentView(R.layout.activity_main);
         switchFragment(new SavedFragment());
-        CreateEditProfileButtonListener();
-        CreateNavBarListener();
+        createEditProfileButtonListener();
+        createCreatePinSetButtonListener();
+        createNavBarListener();
     }
-    private void CreateEditProfileButtonListener() {
+    private void createEditProfileButtonListener() {
         Button profile = findViewById(R.id.button);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,7 +36,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void CreateNavBarListener() {
+    private void createCreatePinSetButtonListener() {
+        Button profile = findViewById(R.id.button_to_add_pinset);
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchFragment(new CreatePinSetFragment());
+            }
+        });
+    }
+    private void createNavBarListener() {
         BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation);
         BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
