@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -71,7 +73,15 @@ public class ViewSetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_set, container, false);
+        View view = inflater.inflate(R.layout.fragment_view_set, container, false);
+        FloatingActionButton createPinBtn = view.findViewById(R.id.createPinBtn);
+        createPinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.MAINACTIVITY.switchFragment(new CreatePinFragment());
+            }
+        });
+        return view;
     }
 
     @Override

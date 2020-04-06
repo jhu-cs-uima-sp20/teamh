@@ -5,6 +5,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
 
+import java.util.ArrayList;
+
 class PinSet implements Parcelable {
 
     private ImageView image;
@@ -12,6 +14,7 @@ class PinSet implements Parcelable {
     private int pins;
     private int followers;
     private String creator;
+    private ArrayList<Pin> pinList;
 
     public PinSet(String newName){
         name = newName;

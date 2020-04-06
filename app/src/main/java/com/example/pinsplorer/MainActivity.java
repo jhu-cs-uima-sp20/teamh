@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         switchFragment(new SavedFragment());
         createEditProfileButtonListener();
-        //createCreatePinSetButtonListener();
         createNavBarListener();
     }
     private void createEditProfileButtonListener() {
@@ -36,15 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void createCreatePinSetButtonListener() {
-        Button addPinSetBtn = findViewById(R.id.button_to_add_pinset);
-        addPinSetBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchFragment(new CreatePinSetFragment());
-            }
-        });
-    }
+
     private void createNavBarListener() {
         BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation);
         BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
