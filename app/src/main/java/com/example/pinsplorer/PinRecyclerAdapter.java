@@ -1,5 +1,6 @@
 package com.example.pinsplorer;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,21 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
         holder.pinname.setText(pinList.get(position).getName());
         holder.visited.setText(pinList.get(position).getVisited());
         holder.description.setText(pinList.get(position).getDescription());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentJump(pin);
+            }
+        });
+    }
+
+    private void fragmentJump(Pin mItemSelected) {
+        ViewPinFragment frag = new ViewPinFragment();
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("item_selected_key", mItemSelected);
+        frag.setArguments(bundle);
+        MainActivity.MAINACTIVITY.switchFragment(frag);
     }
 
     @Override
