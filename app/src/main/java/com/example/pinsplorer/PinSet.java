@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 class PinSet implements Parcelable {
 
-    private ImageView image;
+    private int image;
     private String name;
     private int pins;
     private int followers;
@@ -24,11 +24,13 @@ class PinSet implements Parcelable {
     }
 
     //constructor for hard-coded data
-    public PinSet(String newName, int newPins, int newFollowers, String newCreator) {
+    public PinSet(String newName, int newPins, int newFollowers, String newCreator, int im) {
         name = newName;
         pins = newPins;
         followers = newFollowers;
         creator = newCreator;
+        image = im;
+
     }
 
     protected PinSet(Parcel in) {
@@ -64,6 +66,10 @@ class PinSet implements Parcelable {
 
     public String getCreator() {
         return creator;
+    }
+
+    public int getImage() {
+        return image;
     }
 
     public void setName(String name) {

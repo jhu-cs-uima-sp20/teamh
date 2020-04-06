@@ -11,7 +11,7 @@ public class PinSetViewHolder extends RecyclerView.ViewHolder {
     public TextView pins;
     public TextView followers;
     public TextView creator;
-    private ImageView image;
+    public ImageView image;
 
     public PinSetViewHolder(View itemView) {
         super(itemView);
