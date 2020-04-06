@@ -24,12 +24,14 @@ class PinSet implements Parcelable {
     }
 
     //constructor for hard-coded data
-    public PinSet(String newName, int newPins, int newFollowers, String newCreator, int im) {
+    public PinSet(String newName, int newPins, int newFollowers, String newCreator, int im,
+                  ArrayList<Pin> list) {
         name = newName;
         pins = newPins;
         followers = newFollowers;
         creator = newCreator;
         image = im;
+        pinList = list;
 
     }
 
@@ -70,6 +72,10 @@ class PinSet implements Parcelable {
 
     public int getImage() {
         return image;
+    }
+
+    public ArrayList<Pin> getPinList() {
+        return pinList;
     }
 
     public void setName(String name) {
