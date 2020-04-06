@@ -33,13 +33,20 @@ public class SavedFragment extends Fragment {
     private String mParam2;
 
     protected static RecyclerView PinSetRecycler;
+    protected static ArrayList<Pin> CodedPins = new ArrayList<>(Arrays.asList(new Pin("Gilman", "no",
+            "A place to study", R.drawable.gilman)));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
-                    Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian", R.drawable.restaurant),
-                            new PinSet("Campus Buildings", 20, 360, "Johns Hopkins", R.drawable.gilman),
-                            new PinSet("Great Sidewalks <3", 9, 14, "Me", R.drawable.sidewalk),
-                            new PinSet("Tourist Attractions", 5, 71, "Me", R.drawable.tourists),
-                            new PinSet("Cool Museums", 8, 27, "Me", R.drawable.museum)));
+                    Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian",
+                                    R.drawable.restaurant, CodedPins),
+                            new PinSet("Campus Buildings", 1, 360, "Johns Hopkins",
+                                    R.drawable.gilman, CodedPins),
+                            new PinSet("Great Sidewalks <3", 9, 14, "Me",
+                                    R.drawable.sidewalk, CodedPins),
+                            new PinSet("Tourist Attractions", 5, 71, "Me",
+                                    R.drawable.tourists, CodedPins),
+                            new PinSet("Cool Museums", 8, 27, "Me",
+                                    R.drawable.museum, CodedPins)));
 
     public SavedFragment() {
         // Required empty public constructor
