@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton4"
+        android:id="@+id/addPinsetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/pinsetImage"
         android:layout_width="188dp"
         android:layout_height="188dp"
         android:layout_marginTop="64dp"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="@+id/include3" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/setNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -48,10 +48,10 @@
         android:hint = "Pin Set Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/pinsetImage" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/setDescriptonText"
         android:layout_width="300dp"
         android:layout_height="175dp"
         android:layout_marginTop="32dp"
@@ -61,5 +61,5 @@
         android:hint="Pin Set Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/setNameText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
