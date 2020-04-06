@@ -34,9 +34,9 @@ public class ViewSetFragment extends Fragment {
     protected static RecyclerView pinRecycler;
     protected static ArrayList<Pin> PinList =
             new ArrayList<>(
-                    Arrays.asList(new Pin("Inner Harbor", "Visited 3/13/20", "Historic harbor of Baltimore"),
-                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce"),
-                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights")));
+                    Arrays.asList(new Pin("Inner Harbor", "Visited 3/13/20", "Historic harbor of Baltimore", R.drawable.innerharbor),
+                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce", R.drawable.market),
+                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights", R.drawable.miracle)));
 
     public ViewSetFragment() {
         // Required empty public constructor

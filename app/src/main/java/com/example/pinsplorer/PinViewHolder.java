@@ -11,7 +11,7 @@ public class PinViewHolder extends RecyclerView.ViewHolder{
     public TextView pinname;
     public TextView visited;
     public TextView description;
-    private ImageView image;
+    public ImageView image;
 
     public PinViewHolder(View itemView) {
         super(itemView);

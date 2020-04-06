@@ -38,7 +38,7 @@ public class SavedFragment extends Fragment {
                     Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian", R.drawable.restaurant),
                             new PinSet("Campus Buildings", 20, 360, "Johns Hopkins", R.drawable.gilman),
                             new PinSet("Great Sidewalks <3", 9, 14, "Me", R.drawable.sidewalk),
-                            new PinSet("Tourist Attractions", 5, 71, "Me", R.drawable.gilman),
+                            new PinSet("Tourist Attractions", 5, 71, "Me", R.drawable.tourists),
                             new PinSet("Cool Museums", 8, 27, "Me", R.drawable.museum)));
 
     public SavedFragment() {

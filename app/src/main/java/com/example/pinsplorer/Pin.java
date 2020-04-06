@@ -6,15 +6,16 @@ import android.widget.ImageView;
 
 public class Pin implements Parcelable {
 
-    private ImageView image;
+    private int image;
     private String name;
     private String visited;
     private String description;
 
-    public Pin(String newName, String newVisited, String newDescription) {
+    public Pin(String newName, String newVisited, String newDescription, int im) {
         name = newName;
         visited = newVisited;
         description = newDescription;
+        image = im;
     }
 
     protected Pin(Parcel in) {
@@ -69,5 +70,13 @@ public class Pin implements Parcelable {
 
     public void setVisited(String visited) {
         this.visited = visited;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
     }
 }

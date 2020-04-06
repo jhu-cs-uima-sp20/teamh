@@ -27,6 +27,7 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull PinViewHolder holder, int position) {
         final Pin pin = pinList.get(position);
+        holder.image.setImageResource(pin.getImage());
         holder.pinname.setText(pinList.get(position).getName());
         holder.visited.setText(pinList.get(position).getVisited());
         holder.description.setText(pinList.get(position).getDescription());
