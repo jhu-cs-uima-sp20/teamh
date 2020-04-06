@@ -32,11 +32,13 @@ public class ViewSetFragment extends Fragment {
     private String mParam2;
 
     protected static RecyclerView pinRecycler;
-    protected static ArrayList<Pin> PinList =
-            new ArrayList<>(
-                    Arrays.asList(new Pin("Inner Harbor", "Visited 3/13/20", "Historic harbor of Baltimore", R.drawable.innerharbor),
-                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce", R.drawable.market),
-                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights", R.drawable.miracle)));
+    protected static PinSet set;
+    protected static ArrayList<Pin> PinList;
+//    protected static ArrayList<Pin> PinList =
+//            new ArrayList<>(
+//                    Arrays.asList(new Pin("Inner Harbor", "Visited 3/13/20", "Historic harbor of Baltimore", R.drawable.innerharbor),
+//                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce", R.drawable.market),
+//                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights", R.drawable.miracle)));
 
     public ViewSetFragment() {
         // Required empty public constructor
@@ -64,8 +66,8 @@ public class ViewSetFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            set = getArguments().getParcelable("item_selected_key");
+            PinList = set.getPinList();
         }
     }
 
