@@ -33,7 +33,7 @@ public class SavedFragment extends Fragment {
     private String mParam2;
 
     protected static RecyclerView PinSetRecycler;
-    protected static ArrayList<Pin> CodedPins = new ArrayList<>(Arrays.asList(new Pin("Gilman", "no",
+    protected static ArrayList<Pin> CodedPins = new ArrayList<>(Arrays.asList(new Pin("Gilman", false,
             "A place to study", R.drawable.gilman)));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
