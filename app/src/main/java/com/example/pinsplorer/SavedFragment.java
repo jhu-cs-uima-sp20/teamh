@@ -33,23 +33,32 @@ public class SavedFragment extends Fragment {
     private String mParam2;
 
     protected static RecyclerView PinSetRecycler;
-    protected static ArrayList<Pin> CodedPins = new ArrayList<>(Arrays.asList(
+    protected static ArrayList<Pin> CampusPins = new ArrayList<>(Arrays.asList(
             new Pin("Gilman", false,
                     "A place to study", R.drawable.gilman),
             new Pin("Malone", true,
                     "The JHU Computer Science Building", R.drawable.malone)));
+
+    protected static ArrayList<Pin> DefaultPins = new ArrayList<>(Arrays.asList(
+            new Pin("Inner Harbor", false,
+                            "A place with lots of boats to look at", R.drawable.innerharbor),
+            new Pin("Market", true,
+                            "This market has really cool stuff!", R.drawable.market),
+            new Pin("Museum", false,
+                    "This museum changes their exhibits once every season, so its a" +
+                            "great place to go often!", R.drawable.museum)));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
                     Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian",
-                                    R.drawable.restaurant, CodedPins),
-                            new PinSet("Campus Buildings", 1, 360, "Johns Hopkins",
-                                    R.drawable.gilman, CodedPins),
+                                    R.drawable.restaurant, DefaultPins),
+                            new PinSet("Campus Buildings", CampusPins.size(), 360, "Johns Hopkins",
+                                    R.drawable.gilman, CampusPins),
                             new PinSet("Great Sidewalks <3", 9, 14, "Me",
-                                    R.drawable.sidewalk, CodedPins),
+                                    R.drawable.sidewalk, DefaultPins),
                             new PinSet("Tourist Attractions", 5, 71, "Me",
-                                    R.drawable.tourists, CodedPins),
+                                    R.drawable.tourists, DefaultPins),
                             new PinSet("Cool Museums", 8, 27, "Me",
-                                    R.drawable.museum, CodedPins)));
+                                    R.drawable.museum, DefaultPins)));
 
     public SavedFragment() {
         // Required empty public constructor
