@@ -37,7 +37,7 @@ public class SavedFragment extends Fragment {
             new Pin("Gilman", false,
                     "A place to study", R.drawable.gilman),
             new Pin("Malone", true,
-                    "The JHU Compuer Science Building", R.drawable.malone)));
+                    "The JHU Computer Science Building", R.drawable.malone)));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
                     Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian",
