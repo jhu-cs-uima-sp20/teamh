@@ -55,7 +55,7 @@ public class SavedFragment extends Fragment {
                                     R.drawable.gilman, CampusPins),
                             new PinSet("Great Sidewalks <3", 9, 14, "Me",
                                     R.drawable.sidewalk, DefaultPins),
-                            new PinSet("Tourist Attractions", 5, 71, "Me",
+                            new PinSet("Tourist Attractions", DefaultPins.size(), 71, "Me",
                                     R.drawable.tourists, DefaultPins),
                             new PinSet("Cool Museums", 8, 27, "Me",
                                     R.drawable.museum, DefaultPins)));
