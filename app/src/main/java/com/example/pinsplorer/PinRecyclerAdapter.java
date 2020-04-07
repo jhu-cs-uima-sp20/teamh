@@ -29,7 +29,14 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
         final Pin pin = pinList.get(position);
         holder.image.setImageResource(pin.getImage());
         holder.pinname.setText(pinList.get(position).getName());
-        holder.visited.setText(pinList.get(position).getVisited());
+
+        if (pinList.get(position).getVisited()) {
+            holder.visited.setText("Visited");
+        }
+        else {
+            holder.visited.setText("Unvisited");
+        }
+
         holder.description.setText(pinList.get(position).getDescription());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

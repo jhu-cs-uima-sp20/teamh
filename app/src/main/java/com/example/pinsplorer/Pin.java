@@ -8,10 +8,10 @@ public class Pin implements Parcelable {
 
     private int image;
     private String name;
-    private String visited;
+    private Boolean visited;
     private String description;
 
-    public Pin(String newName, String newVisited, String newDescription, int im) {
+    public Pin(String newName, Boolean newVisited, String newDescription, int im) {
         name = newName;
         visited = newVisited;
         description = newDescription;
@@ -20,7 +20,7 @@ public class Pin implements Parcelable {
 
     protected Pin(Parcel in) {
         name = in.readString();
-        visited = in.readString();
+        visited = in.readBoolean();
         description = in.readString();
     }
 
@@ -44,7 +44,7 @@ public class Pin implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeString(visited);
+        dest.writeBoolean(visited);
         dest.writeString(description);
     }
 
@@ -56,7 +56,7 @@ public class Pin implements Parcelable {
         return description;
     }
 
-    public String getVisited() {
+    public Boolean getVisited() {
         return visited;
     }
 
@@ -68,7 +68,7 @@ public class Pin implements Parcelable {
         this.description = description;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(Boolean visited) {
         this.visited = visited;
     }
 
