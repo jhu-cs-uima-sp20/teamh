@@ -49,16 +49,17 @@ public class SavedFragment extends Fragment {
                             "great place to go often!", R.drawable.museum)));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
-                    Arrays.asList(new PinSet("Baltimore Eats", 17, 32, "Brian",
+                    Arrays.asList(
+                            new PinSet("Baltimore Eats", 17, 32, "Brian",
                                     R.drawable.restaurant, DefaultPins),
+                            new PinSet("Baltimore Tourist Attractions", DefaultPins.size(), 71, "Me",
+                                    R.drawable.tourists, DefaultPins),
                             new PinSet("Campus Buildings", CampusPins.size(), 360, "Johns Hopkins",
                                     R.drawable.gilman, CampusPins),
-                            new PinSet("Great Sidewalks <3", 9, 14, "Me",
-                                    R.drawable.sidewalk, DefaultPins),
-                            new PinSet("Tourist Attractions", DefaultPins.size(), 71, "Me",
-                                    R.drawable.tourists, DefaultPins),
                             new PinSet("Cool Museums", 8, 27, "Me",
-                                    R.drawable.museum, DefaultPins)));
+                                    R.drawable.museum, DefaultPins),
+                            new PinSet("Great Sidewalks <3", 9, 14, "Me",
+                                    R.drawable.sidewalk, DefaultPins)));
 
     public SavedFragment() {
         // Required empty public constructor
