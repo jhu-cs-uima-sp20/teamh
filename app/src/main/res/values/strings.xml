@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">blank fragment</string>
     <string name="menu_browse_pinsets_pic">Browse Pinsets</string>
     <string name="menu_saved_pinsets">Saved Pinsets</string>
+    <string name="splash_string">Adventure Awaits…</string>
 </resources>
