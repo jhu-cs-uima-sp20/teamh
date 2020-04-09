@@ -2,14 +2,18 @@ package com.example.pinsplorer;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -96,12 +100,12 @@ public class SavedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_saved, container, false);
+        final View view = inflater.inflate(R.layout.fragment_saved, container, false);
         FloatingActionButton addPinSetBtn = view.findViewById(R.id.button_to_add_pinset);
             addPinSetBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.MAINACTIVITY.switchFragment(new CreatePinSetFragment());
+                   MainActivity.MAINACTIVITY.switchFragment(new CreatePinSetFragment());
                 }
             });
         return view;
@@ -112,6 +116,12 @@ public class SavedFragment extends Fragment {
     public void onStart(){
         super.onStart();
         PinSetRecycler = getView().findViewById(R.id.pinSetRecyclerView);
+
+        ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinSetList, PinSetRecycler));
+        deleteSwipe.attachToRecyclerView(PinSetRecycler);
+
+        ItemTouchHelper followSwipe = new ItemTouchHelper(new FollowSwipeController(PinSetList, PinSetRecycler));
+        followSwipe.attachToRecyclerView(PinSetRecycler);
         PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));
         PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }

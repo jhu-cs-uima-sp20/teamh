@@ -18,6 +18,13 @@ public class Pin implements Parcelable {
         image = im;
     }
 
+    public Pin(String newName, String newDescription) {
+        name = newName;
+        visited = false;
+        description = newDescription;
+        image = R.drawable.miracle;
+    }
+
     protected Pin(Parcel in) {
         name = in.readString();
         visited = in.readBoolean();

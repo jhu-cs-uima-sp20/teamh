@@ -23,6 +23,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="76dp"
+        android:backgroundTint="@color/colorSecondaryMedium"
         android:clickable="true"
         android:src="@drawable/ic_check_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
         android:id="@+id/pinsetImage"
         android:layout_width="188dp"
         android:layout_height="188dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="128dp"
         android:src="@drawable/gilman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -40,26 +41,14 @@
         app:layout_constraintTop_toTopOf="@+id/include3" />
 
     <EditText
-        android:id="@+id/setNameText"
+        android:id="@+id/setPinSetNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:ems="10"
-        android:hint = "Pin Set Name"
+        android:hint="PinSet Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pinsetImage" />
 
-    <EditText
-        android:id="@+id/setDescriptonText"
-        android:layout_width="300dp"
-        android:layout_height="175dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:hint="Pin Set Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/setNameText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

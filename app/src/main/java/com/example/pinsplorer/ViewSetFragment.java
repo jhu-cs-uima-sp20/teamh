@@ -3,6 +3,7 @@ package com.example.pinsplorer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,6 +69,7 @@ public class ViewSetFragment extends Fragment {
         if (getArguments() != null) {
             set = getArguments().getParcelable("item_selected_key");
             PinList = set.getPinList();
+
         }
     }
 
@@ -90,6 +92,8 @@ public class ViewSetFragment extends Fragment {
     public void onStart(){
         super.onStart();
         pinRecycler = getView().findViewById(R.id.pinRecyclerView);
+        ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinList, pinRecycler, true));
+        deleteSwipe.attachToRecyclerView(pinRecycler);
         pinRecycler.setAdapter(new PinRecyclerAdapter(PinList));
         pinRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }

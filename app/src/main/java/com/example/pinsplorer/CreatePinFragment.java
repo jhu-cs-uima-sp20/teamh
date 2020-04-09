@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 /**
@@ -59,6 +62,19 @@ public class CreatePinFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_pin, container, false);
+        final View view = inflater.inflate(R.layout.fragment_create_pin, container, false);
+        FloatingActionButton addPinBtn = view.findViewById(R.id.addPinButton);
+        addPinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText setNameEdit = view.findViewById(R.id.pinNameText);
+                EditText setDescriptionEdit = view.findViewById(R.id.pinDescriptionText);
+                ViewSetFragment.PinList.add(new Pin(setNameEdit.getText().toString(), setDescriptionEdit.getText().toString()));
+                ViewSetFragment.pinRecycler.getAdapter().notifyDataSetChanged();
+                MainActivity.MAINACTIVITY.switchFragment(new ViewSetFragment());
+            }
+        });
+
+        return view;
     }
 }

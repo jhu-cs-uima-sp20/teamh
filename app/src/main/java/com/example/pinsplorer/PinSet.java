@@ -1,9 +1,7 @@
 package com.example.pinsplorer;
 
-import android.graphics.drawable.Drawable;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -21,6 +19,8 @@ class PinSet implements Parcelable {
         pins = 0;
         followers = 0;
         creator = "Me";
+        image = R.drawable.gilman;
+        pinList = new ArrayList<>();
     }
 
     //constructor for hard-coded data
