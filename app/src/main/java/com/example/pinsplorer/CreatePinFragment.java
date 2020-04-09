@@ -106,14 +106,6 @@ public class CreatePinFragment extends Fragment {
         return view;
     }
 
-    private void startGallery() {
-        Intent cameraIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        cameraIntent.setType("image/*");
-        if (cameraIntent.resolveActivity(getActivity().getPackageManager()) != null) {
-            startActivityForResult(cameraIntent, 1000);
-        }
-    }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
