@@ -2,11 +2,14 @@ package com.example.pinsplorer;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -113,6 +116,12 @@ public class SavedFragment extends Fragment {
     public void onStart(){
         super.onStart();
         PinSetRecycler = getView().findViewById(R.id.pinSetRecyclerView);
+
+        ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinSetList, PinSetRecycler));
+        deleteSwipe.attachToRecyclerView(PinSetRecycler);
+
+        ItemTouchHelper followSwipe = new ItemTouchHelper(new FollowSwipeController(PinSetList, PinSetRecycler));
+        followSwipe.attachToRecyclerView(PinSetRecycler);
         PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));
         PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
