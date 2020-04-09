@@ -7,10 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class DeleteSwipeController extends ItemTouchHelper.Callback {
-    private ArrayList<PinSet> list;
+    private ArrayList<PinSet> setList;
+    private ArrayList<Pin> pinList;
+    private boolean isPinList;
     private RecyclerView recycler;
     DeleteSwipeController(ArrayList<PinSet> list, RecyclerView recycler) {
-        this.list = list;
+        this.isPinList = false;
+        this.setList = list;
+        this.recycler = recycler;
+    }
+    // Need to have superfluous parameter or constructor has same erasure as previous
+    DeleteSwipeController(ArrayList<Pin> list, RecyclerView recycler, boolean isPinList) {
+        super();
+        this.isPinList = true;
+        this.pinList = list;
         this.recycler = recycler;
     }
     @Override
@@ -25,7 +35,11 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-        list.remove(viewHolder.getAdapterPosition());
+        if (isPinList) {
+            pinList.remove(viewHolder.getAdapterPosition());
+        } else {
+            setList.remove(viewHolder.getAdapterPosition());
+        }
         recycler.getAdapter().notifyDataSetChanged();
     }
 }
