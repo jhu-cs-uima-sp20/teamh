@@ -7,6 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 /**
@@ -59,6 +62,19 @@ public class CreatePinSetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_pin_set, container, false);
+        final View view = inflater.inflate(R.layout.fragment_create_pin_set, container, false);
+        FloatingActionButton addPinSetBtn = view.findViewById(R.id.addPinsetButton);
+        addPinSetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO still need to figure out how to upload image from user's photo gallery here
+                EditText setNameEdit = view.findViewById(R.id.setPinSetNameText);
+                SavedFragment.PinSetList.add(new PinSet(setNameEdit.getText().toString()));
+                SavedFragment.PinSetRecycler.getAdapter().notifyDataSetChanged();
+                MainActivity.MAINACTIVITY.switchFragment(new SavedFragment());
+            }
+        });
+
+        return view;
     }
 }

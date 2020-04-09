@@ -33,7 +33,7 @@
         android:id="@+id/pinImage"
         android:layout_width="188dp"
         android:layout_height="188dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="80dp"
         android:src="@drawable/gilman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

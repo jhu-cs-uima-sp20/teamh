@@ -7,10 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".SavedFragment">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pinSetRecyclerView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="555dp"
         android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

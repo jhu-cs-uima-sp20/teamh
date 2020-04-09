@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -96,12 +97,12 @@ public class SavedFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_saved, container, false);
+        final View view = inflater.inflate(R.layout.fragment_saved, container, false);
         FloatingActionButton addPinSetBtn = view.findViewById(R.id.button_to_add_pinset);
             addPinSetBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.MAINACTIVITY.switchFragment(new CreatePinSetFragment());
+                   MainActivity.MAINACTIVITY.switchFragment(new CreatePinSetFragment());
                 }
             });
         return view;
