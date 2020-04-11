@@ -51,4 +51,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/pinVisitStatusTextView"
         app:layout_constraintTop_toBottomOf="@+id/pinVisitStatusTextView" />
+
+    <ImageButton
+        android:id="@+id/followButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="follow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/clear" />
 </androidx.constraintlayout.widget.ConstraintLayout>
