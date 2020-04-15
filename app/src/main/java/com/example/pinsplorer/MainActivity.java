@@ -43,12 +43,21 @@ public class MainActivity extends AppCompatActivity {
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        if ((item.getItemId() == R.id.saved_pinsets)) {
-                            switchFragment(new SavedFragment());
-                            return true;
-                        } else {
-                            switchFragment(new BrowseFragment());
-                            return true;
+                        switch (item.getItemId()) {
+                            case R.id.saved_pinsets:
+                                switchFragment(new SavedFragment());
+                                return true;
+                            case R.id.browse_pinsets:
+                                switchFragment(new BrowseFragment());
+                                return true;
+                            case R.id.map_nav:
+                                switchFragment(new MapFragment());
+                                return true;
+                            case R.id.follow_pinsets:
+                                switchFragment(new FollowFragment());
+                                return true;
+                            default:
+                                return false;
                         }
                     }
                 };

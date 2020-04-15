@@ -5,7 +5,16 @@
         android:icon="@android:drawable/alert_light_frame"
         android:title="@string/menu_saved_pinsets" />
     <item
+        android:id="@+id/follow_pinsets"
+        android:icon="@android:drawable/arrow_down_float"
+        android:title="@string/menu_follow_pinsets_pic" />
+
+    <item
         android:id="@+id/browse_pinsets"
-        android:icon="@drawable/abc_vector_test"
+        android:icon="@android:drawable/ic_menu_call"
         android:title="@string/menu_browse_pinsets_pic" />
+    <item
+        android:id="@+id/map_nav"
+        android:icon="@android:drawable/alert_light_frame"
+        android:title="@string/menu_map_pic" />
 </menu>
