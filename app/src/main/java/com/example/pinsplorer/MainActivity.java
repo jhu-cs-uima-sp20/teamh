@@ -3,12 +3,9 @@ package com.example.pinsplorer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -51,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                                 switchFragment(new BrowseFragment());
                                 return true;
                             case R.id.map_nav:
-                                switchFragment(new MapFragment());
+                                switchFragment(new Map_Fragment());
                                 return true;
                             case R.id.follow_pinsets:
                                 switchFragment(new FollowFragment());
