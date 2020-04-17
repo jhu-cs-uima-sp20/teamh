@@ -37,6 +37,7 @@
         android:layout_marginBottom="70dp"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
+        android:tint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

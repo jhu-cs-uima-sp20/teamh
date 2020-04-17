@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fa315b">
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_delete_white_24dp"
+            android:contentDescription="@string/delete_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/delete_icon"
+            android:text="@string/delete"
+            android:textColor="#fff"
+            android:textSize="13dp" />
+    </RelativeLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pin_view_holder"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="110dp"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/pinImageView"
@@ -13,53 +43,47 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/nyc2"
-        tools:srcCompat="@drawable/nyc2" />
+        app:srcCompat="@drawable/gilman" />
 
     <TextView
         android:id="@+id/pinNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/pinImageView"
         android:text="Pin Name"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/pinImageView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/pinVisitStatusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
-        android:text="Visit Status"
-        app:layout_constraintStart_toEndOf="@+id/pinImageView"
-        app:layout_constraintTop_toBottomOf="@+id/pinNameTextView" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_toEndOf="@+id/pinImageView"
+        android:text="Visit Status" />
 
     <TextView
         android:id="@+id/pinDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="91dp"
         android:layout_marginBottom="16dp"
-        android:text="Description goes here"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/pinVisitStatusTextView"
-        app:layout_constraintTop_toBottomOf="@+id/pinVisitStatusTextView" />
+        android:layout_toStartOf="@+id/followButton"
+        android:layout_toEndOf="@+id/pinImageView"
+        android:text="Description goes here" />
 
     <ImageButton
         android:id="@+id/followButton"
         android:layout_width="64dp"
         android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:contentDescription="follow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/clear" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:contentDescription="follow" />
+</RelativeLayout>
+</FrameLayout>

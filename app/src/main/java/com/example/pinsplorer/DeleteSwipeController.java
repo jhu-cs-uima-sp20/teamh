@@ -54,8 +54,9 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
                             int actionState,
                             boolean isCurrentlyActive) {
         final View v = viewHolder.itemView;
-        final View foregroundView = v.findViewById(R.id.pin_set_view_holder);
-
+        View foregroundView;
+        foregroundView = isPinList ?
+                v.findViewById(R.id.pin_view_holder) : v.findViewById(R.id.pin_set_view_holder);
         getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY,
                 actionState, isCurrentlyActive);
     }
@@ -63,7 +64,9 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
     @Override
     public void clearView(@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         final View v = viewHolder.itemView;
-        final View foregroundView = v.findViewById(R.id.pin_set_view_holder);
+        View foregroundView;
+        foregroundView = isPinList ?
+                v.findViewById(R.id.pin_view_holder) : v.findViewById(R.id.pin_set_view_holder);
         getDefaultUIUtil().clearView(foregroundView);
     }
 }
