@@ -14,15 +14,23 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.google.android.gms.common.api.Status;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.PlacesClient;
+import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
+import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 
 /**
@@ -81,6 +89,11 @@ public class CreatePinFragment extends Fragment {
         // Inflate the layout for this fragment
         final View view = inflater.inflate(R.layout.fragment_create_pin, container, false);
 
+        // Initialize the SDK
+        Places.initialize(getActivity().getApplicationContext(), getString(R.string.API_KEY));
+        // Create a new Places client instance
+        PlacesClient placesClient = Places.createClient(getContext());
+
         mImagebtn = (ImageButton) view.findViewById(R.id.imageButton2);
 
         mImagebtn.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +113,28 @@ public class CreatePinFragment extends Fragment {
                 ViewSetFragment.PinList.add(new Pin(setNameEdit.getText().toString(), setDescriptionEdit.getText().toString()));
                 ViewSetFragment.pinRecycler.getAdapter().notifyDataSetChanged();
                 MainActivity.MAINACTIVITY.switchFragment(new ViewSetFragment());
+            }
+        });
+
+        // Initialize the AutocompleteSupportFragment.
+        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+                getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment);
+
+// Specify the types of place data to return.
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+
+// Set up a PlaceSelectionListener to handle the response.
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(Place place) {
+                // TODO: Get info about the selected place.
+                Log.i("TAG", "Place: " + place.getName() + ", " + place.getId());
+            }
+
+            @Override
+            public void onError(Status status) {
+                // TODO: Handle the error.
+                Log.i("TAG", "An error occurred: " + status);
             }
         });
 

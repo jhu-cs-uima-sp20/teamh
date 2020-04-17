@@ -11,4 +11,9 @@
     <string name="splash_string">Adventure Awaits…</string>
     <string name="menu_map_pic">Map</string>
     <string name="menu_follow_pinsets_pic">Follow Pinsets</string>
+    <string name="API_KEY">placeholder</string>
+    //Please don't commit the API key to github bc it might charge my google cloud account if it gets overused by other people
+    //Just put the key in here when you're testing the app and delete it from here again when you commit
+
+
 </resources>
