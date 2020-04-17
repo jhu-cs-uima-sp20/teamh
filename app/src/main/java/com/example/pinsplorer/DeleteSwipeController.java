@@ -1,5 +1,8 @@
 package com.example.pinsplorer;
 
+import android.graphics.Canvas;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,5 +44,26 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
             setList.remove(viewHolder.getAdapterPosition());
         }
         recycler.getAdapter().notifyDataSetChanged();
+    }
+
+    @Override
+    public void onChildDraw(@NonNull Canvas c,
+                            @NonNull RecyclerView recyclerView,
+                            @NonNull RecyclerView.ViewHolder viewHolder,
+                            float dX, float dY,
+                            int actionState,
+                            boolean isCurrentlyActive) {
+        final View v = viewHolder.itemView;
+        final View foregroundView = v.findViewById(R.id.pin_set_view_holder);
+
+        getDefaultUIUtil().onDraw(c, recyclerView, foregroundView, dX, dY,
+                actionState, isCurrentlyActive);
+    }
+
+    @Override
+    public void clearView(@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
+        final View v = viewHolder.itemView;
+        final View foregroundView = v.findViewById(R.id.pin_set_view_holder);
+        getDefaultUIUtil().clearView(foregroundView);
     }
 }

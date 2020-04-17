@@ -1,83 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/pin_set_view_holder"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:layout_height="130dp"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/pinSetImageView"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/gilman" />
+    <RelativeLayout
+        android:id="@+id/view_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fa315b">
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_delete_white_24dp"
+            android:contentDescription="@string/delete_desc" />
 
-    <TextView
-        android:id="@+id/pinSetNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
-        android:layout_toEndOf="@+id/pinSetImageView"
-        android:text="Set Name"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/delete_icon"
+            android:text="@string/delete"
+            android:textColor="#fff"
+            android:textSize="13dp" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/numPinsTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/textView5"
-        android:text="#" />
+    <RelativeLayout
+        android:id="@+id/pin_set_view_holder"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/numPinsTextView"
-        android:text="Pins" />
+        <ImageView
+            android:id="@+id/pinSetImageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/gilman" />
 
-    <TextView
-        android:id="@+id/numFollowersTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/pinSetImageView"
-        android:text="#" />
+        <TextView
+            android:id="@+id/pinSetNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/pinSetImageView"
+            android:text="Set Name"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/numFollowersTextView"
-        android:text="Followers" />
+        <TextView
+            android:id="@+id/numPinsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/textView5"
+            android:text="#" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_toEndOf="@+id/pinSetImageView"
-        android:text="Creator: " />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/numPinsTextView"
+            android:text="Pins" />
 
-    <TextView
-        android:id="@+id/pinSetCreatorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="60dp"
-        android:layout_toEndOf="@+id/textView6"
-        android:text="Name" />
-</RelativeLayout>
+        <TextView
+            android:id="@+id/numFollowersTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/pinSetImageView"
+            android:text="#" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="40dp"
+            android:layout_toEndOf="@+id/numFollowersTextView"
+            android:text="Followers" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/pinSetImageView"
+            android:text="Creator: " />
+
+        <TextView
+            android:id="@+id/pinSetCreatorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/textView6"
+            android:text="Name" />
+    </RelativeLayout>
+</FrameLayout>
