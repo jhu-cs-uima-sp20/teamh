@@ -27,7 +27,9 @@ public class Pin implements Parcelable {
 
     protected Pin(Parcel in) {
         name = in.readString();
-        visited = in.readBoolean();
+        boolean bool[] = new boolean[1];
+        in.readBooleanArray(bool); // readBool not implemented in SDK 18
+        visited = bool[0];
         description = in.readString();
     }
 
@@ -51,7 +53,8 @@ public class Pin implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
-        dest.writeBoolean(visited);
+        boolean bool[] = {visited};
+        dest.writeBooleanArray(bool);
         dest.writeString(description);
     }
 
