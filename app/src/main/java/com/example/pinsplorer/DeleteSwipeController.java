@@ -2,6 +2,7 @@ package com.example.pinsplorer;
 
 import android.graphics.Canvas;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -64,9 +65,10 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
     @Override
     public void clearView(@NonNull RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         final View v = viewHolder.itemView;
-        View foregroundView;
-        foregroundView = isPinList ?
+        View itemView;
+        itemView = isPinList ?
                 v.findViewById(R.id.pin_view_holder) : v.findViewById(R.id.pin_set_view_holder);
-        getDefaultUIUtil().clearView(foregroundView);
+       getDefaultUIUtil().clearView(itemView);
+
     }
 }

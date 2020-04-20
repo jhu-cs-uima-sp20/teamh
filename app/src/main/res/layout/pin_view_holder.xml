@@ -5,7 +5,7 @@
     android:layout_height="110dp"
     android:orientation="vertical">
     <RelativeLayout
-        android:id="@+id/view_background"
+        android:id="@+id/delete_pin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fa315b">
@@ -23,18 +23,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@id/delete_icon"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@id/delete_icon"
             android:text="@string/delete"
             android:textColor="#fff"
-            android:textSize="13dp" />
+            android:textSize="13sp" />
     </RelativeLayout>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<RelativeLayout
     android:id="@+id/pin_view_holder"
     android:layout_width="match_parent"
     android:layout_height="110dp"
     android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/mark_visited_button"
+        android:layout_width="80dp"
+        android:layout_height="64dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/colorSecondaryMedium"
+        android:text="@string/mark_visited"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <ImageView
         android:id="@+id/pinImageView"
@@ -73,17 +84,9 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="91dp"
         android:layout_marginBottom="16dp"
-        android:layout_toStartOf="@+id/followButton"
+        android:layout_toStartOf="@+id/mark_visited_button"
         android:layout_toEndOf="@+id/pinImageView"
         android:text="Description goes here" />
 
-    <ImageButton
-        android:id="@+id/followButton"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="follow" />
 </RelativeLayout>
 </FrameLayout>

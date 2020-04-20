@@ -28,7 +28,7 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
     public void onBindViewHolder(@NonNull PinViewHolder holder, int position) {
         final Pin pin = pinList.get(position);
         holder.image.setImageResource(pin.getImage());
-        holder.pinname.setText(pinList.get(position).getName());
+        holder.pinname.setText(pin.getName());
 
         if (pinList.get(position).getVisited()) {
             holder.visited.setText("Visited");
@@ -43,6 +43,12 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
             @Override
             public void onClick(View v) {
                 fragmentJump(pin);
+            }
+        });
+        holder.markButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pin.setVisited(true);
             }
         });
     }

@@ -1,6 +1,7 @@
 package com.example.pinsplorer;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ public class PinViewHolder extends RecyclerView.ViewHolder{
     public TextView visited;
     public TextView description;
     public ImageView image;
+    public Button markButton;
 
     public PinViewHolder(View itemView) {
         super(itemView);
@@ -19,5 +21,6 @@ public class PinViewHolder extends RecyclerView.ViewHolder{
         visited = itemView.findViewById(R.id.pinVisitStatusTextView);
         description = itemView.findViewById(R.id.pinDescriptionTextView);
         image = itemView.findViewById(R.id.pinImageView);
+        markButton = itemView.findViewById(R.id.mark_visited_button);
     }
 }

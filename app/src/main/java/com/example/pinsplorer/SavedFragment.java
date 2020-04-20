@@ -119,9 +119,6 @@ public class SavedFragment extends Fragment {
 
         ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinSetList, PinSetRecycler));
         deleteSwipe.attachToRecyclerView(PinSetRecycler);
-
-        ItemTouchHelper followSwipe = new ItemTouchHelper(new FollowSwipeController(PinSetList, PinSetRecycler));
-        followSwipe.attachToRecyclerView(PinSetRecycler);
         PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));
         PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }

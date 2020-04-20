@@ -27,7 +27,7 @@ public class Pin implements Parcelable {
 
     protected Pin(Parcel in) {
         name = in.readString();
-        boolean bool[] = new boolean[1];
+        boolean[] bool = new boolean[1];
         in.readBooleanArray(bool); // readBool not implemented in SDK 18
         visited = bool[0];
         description = in.readString();
