@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
@@ -15,6 +17,8 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
     public PinRecyclerAdapter(ArrayList<Pin> list){
         pinList = list;
     }
+    public Pin recentlyDeletedPin;
+    int recentlyDeletedPinPosition;
 
     @NonNull
     @Override
@@ -64,5 +68,27 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
     @Override
     public int getItemCount() {
         return pinList.size();
+    }
+
+    public void deleteItem(int position) {
+        recentlyDeletedPin = pinList.get(position);
+        recentlyDeletedPinPosition = position;
+        pinList.remove(position);
+        notifyItemRemoved(position);
+        showUndoSnackbar();
+    }
+
+    private void showUndoSnackbar() {
+        View view = MainActivity.MAINACTIVITY.findViewById(R.id.fragment_view_set);
+        Snackbar snackbar = Snackbar.make(view, "",
+                Snackbar.LENGTH_LONG);
+        snackbar.setAction(R.string.snack_bar_undo, v -> undoDelete());
+        snackbar.show();
+    }
+
+    private void undoDelete() {
+        pinList.add(recentlyDeletedPinPosition,
+                recentlyDeletedPin);
+        notifyItemInserted(recentlyDeletedPinPosition);
     }
 }

@@ -6,11 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder> {
 
     private ArrayList<PinSet> pinSetList;
+    private PinSet recentlyDeletedPinSet;
+    private int recentlyDeletedPinSetPosition;
 
     public PinSetRecyclerAdapter(ArrayList<PinSet> list){
         pinSetList = list;
@@ -52,5 +57,27 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
     @Override
     public int getItemCount() {
         return pinSetList.size();
+    }
+
+    public void deleteItem(int position) {
+        recentlyDeletedPinSet = pinSetList.get(position);
+        recentlyDeletedPinSetPosition = position;
+        pinSetList.remove(position);
+        notifyItemRemoved(position);
+        showUndoSnackbar();
+    }
+
+    private void showUndoSnackbar() {
+        View view = MainActivity.MAINACTIVITY.findViewById(R.id.saved_pinsets);
+        Snackbar snackbar = Snackbar.make(view, "",
+                Snackbar.LENGTH_LONG);
+        snackbar.setAction(R.string.snack_bar_undo, v -> undoDelete());
+        snackbar.show();
+    }
+
+    private void undoDelete() {
+        pinSetList.add(recentlyDeletedPinSetPosition,
+                recentlyDeletedPinSet);
+        notifyItemInserted(recentlyDeletedPinSetPosition);
     }
 }

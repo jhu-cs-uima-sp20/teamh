@@ -39,10 +39,11 @@ public class DeleteSwipeController extends ItemTouchHelper.Callback {
 
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
         if (isPinList) {
-            pinList.remove(viewHolder.getAdapterPosition());
+            ((PinRecyclerAdapter) recycler.getAdapter()).deleteItem(viewHolder.getAdapterPosition());
         } else {
-            setList.remove(viewHolder.getAdapterPosition());
+            ((PinSetRecyclerAdapter) recycler.getAdapter()).deleteItem(viewHolder.getAdapterPosition());
         }
         recycler.getAdapter().notifyDataSetChanged();
     }
