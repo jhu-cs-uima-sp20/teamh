@@ -33,6 +33,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private int index;
 
     public MapFragment() {
         // Required empty public constructor
@@ -60,8 +61,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            index = getArguments().getInt("Set_Index");
         }
     }
 
@@ -86,7 +86,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(jhu, 14f));
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(jhu));
 
-        for (Pin pin : SavedFragment.PinSetList.get(2).getPinList()) {
+        for (Pin pin : SavedFragment.PinSetList.get(index).getPinList()) {
             googleMap.addMarker(new MarkerOptions().position((pin.getCoords())).title(pin.getName()));
         }
     }

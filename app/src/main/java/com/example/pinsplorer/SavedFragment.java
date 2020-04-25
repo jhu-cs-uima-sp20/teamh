@@ -46,12 +46,12 @@ public class SavedFragment extends Fragment {
 
     protected static ArrayList<Pin> DefaultPins = new ArrayList<>(Arrays.asList(
             new Pin("Inner Harbor", false,
-                            "A place with lots of boats to look at", R.drawable.innerharbor),
+                            "A place with lots of boats to look at", R.drawable.innerharbor, new LatLng(39.3270, -76.6380)),
             new Pin("Market", true,
-                            "This market has really cool stuff!", R.drawable.market),
+                            "This market has really cool stuff!", R.drawable.market, new LatLng(39.3220, -76.6310)),
             new Pin("Museum", false,
                     "This museum changes their exhibits once every season, so its a" +
-                            "great place to go often!", R.drawable.museum)));
+                            "great place to go often!", R.drawable.museum, new LatLng(39.3250, -76.6320))));
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
                     Arrays.asList(
@@ -117,7 +117,6 @@ public class SavedFragment extends Fragment {
     public void onStart(){
         super.onStart();
         PinSetRecycler = getView().findViewById(R.id.pinSetRecyclerView);
-
         ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinSetList, PinSetRecycler));
         deleteSwipe.attachToRecyclerView(PinSetRecycler);
         PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetList));

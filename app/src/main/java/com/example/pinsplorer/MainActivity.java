@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                                 switchFragment(new BrowseFragment());
                                 return true;
                             case R.id.map_nav:
-                                switchFragment(new MapFragment());
+                                switchFragment(new SelectionFragment());
                                 return true;
                             case R.id.follow_pinsets:
                                 switchFragment(new FollowFragment());
