@@ -4,12 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Pin implements Parcelable {
 
     private int image;
     private String name;
     private Boolean visited;
     private String description;
+    private LatLng coords;
 
     public Pin(String newName, Boolean newVisited, String newDescription, int im) {
         name = newName;
@@ -18,11 +21,20 @@ public class Pin implements Parcelable {
         image = im;
     }
 
-    public Pin(String newName, String newDescription) {
+    public Pin(String newName, Boolean newVisited, String newDescription, int im, LatLng newCoords) {
+        name = newName;
+        visited = newVisited;
+        description = newDescription;
+        image = im;
+        coords = newCoords;
+    }
+
+    public Pin(String newName, String newDescription, LatLng newCoords) {
         name = newName;
         visited = false;
         description = newDescription;
         image = R.drawable.miracle;
+        coords = newCoords;
     }
 
     protected Pin(Parcel in) {
@@ -88,5 +100,9 @@ public class Pin implements Parcelable {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public LatLng getCoords() {
+        return coords;
     }
 }

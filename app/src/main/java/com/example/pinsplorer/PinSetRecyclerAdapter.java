@@ -30,7 +30,7 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PinSetViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PinSetViewHolder holder, final int position) {
         final PinSet set = pinSetList.get(position);
         holder.image.setImageResource(set.getImage());
         holder.setname.setText(pinSetList.get(position).getName());
@@ -41,15 +41,16 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentJump(set);
+                fragmentJump(set, position);
             }
         });
     }
 
-    private void fragmentJump(PinSet mItemSelected) {
+    private void fragmentJump(PinSet mItemSelected, int position) {
         ViewSetFragment frag = new ViewSetFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable("item_selected_key", mItemSelected);
+        bundle.putInt("item_index", position);
         frag.setArguments(bundle);
         MainActivity.MAINACTIVITY.switchFragment(frag);
     }

@@ -54,6 +54,10 @@ class PinSet implements Parcelable {
         }
     };
 
+    public void addPin(Pin newPin) {
+        pinList.add(newPin);
+    }
+
     public String getName() {
         return name;
     }

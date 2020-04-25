@@ -85,6 +85,10 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 .title("Johns Hopkins University"));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(jhu, 14f));
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(jhu));
+
+        for (Pin pin : SavedFragment.PinSetList.get(2).getPinList()) {
+            googleMap.addMarker(new MarkerOptions().position((pin.getCoords())).title(pin.getName()));
+        }
     }
 
     //convert to java

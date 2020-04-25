@@ -24,7 +24,7 @@
     <string name="mark_visited">Mark Visited</string>
     <string name="snack_bar_undo">Undo</string>
     //Please don't commit the API key to github bc it might charge my google cloud account if it gets overused by other people
-    //Just put the key in here when you're testing the app and delete it from here again when you commit
+    //Just put the key in here @API_KEY when you're testing the app and delete it from here again when you commit
 
 
 </resources>

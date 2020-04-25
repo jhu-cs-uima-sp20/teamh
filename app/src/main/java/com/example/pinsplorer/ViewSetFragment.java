@@ -69,7 +69,6 @@ public class ViewSetFragment extends Fragment {
         if (getArguments() != null) {
             set = getArguments().getParcelable("item_selected_key");
             PinList = set.getPinList();
-
         }
     }
 

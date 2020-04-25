@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -39,9 +40,9 @@ public class SavedFragment extends Fragment {
     protected static RecyclerView PinSetRecycler;
     protected static ArrayList<Pin> CampusPins = new ArrayList<>(Arrays.asList(
             new Pin("Gilman", false,
-                    "A place to study", R.drawable.gilman),
+                    "A place to study", R.drawable.gilman, new LatLng(39.3250, -76.6360)),
             new Pin("Malone", true,
-                    "The JHU Computer Science Building", R.drawable.malone)));
+                    "The JHU Computer Science Building", R.drawable.malone, new LatLng(39.3350, -76.6300))));
 
     protected static ArrayList<Pin> DefaultPins = new ArrayList<>(Arrays.asList(
             new Pin("Inner Harbor", false,

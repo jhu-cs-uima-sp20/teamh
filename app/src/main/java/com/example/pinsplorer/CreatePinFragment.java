@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.api.net.PlacesClient;
@@ -104,24 +105,14 @@ public class CreatePinFragment extends Fragment {
             }
         });
 
-        FloatingActionButton addPinBtn = view.findViewById(R.id.addPinButton);
-        addPinBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText setNameEdit = view.findViewById(R.id.pinNameText);
-                EditText setDescriptionEdit = view.findViewById(R.id.pinDescriptionText);
-                ViewSetFragment.PinList.add(new Pin(setNameEdit.getText().toString(), setDescriptionEdit.getText().toString()));
-                ViewSetFragment.pinRecycler.getAdapter().notifyDataSetChanged();
-                MainActivity.MAINACTIVITY.switchFragment(new ViewSetFragment());
-            }
-        });
-
         // Initialize the AutocompleteSupportFragment.
-        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+        final AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
                 getChildFragmentManager().findFragmentById(R.id.autocomplete_fragment);
 
 // Specify the types of place data to return.
-        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.LAT_LNG));
+
+        final LatLng[] newCoords = {new LatLng(0, 0)};
 
 // Set up a PlaceSelectionListener to handle the response.
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
@@ -129,12 +120,27 @@ public class CreatePinFragment extends Fragment {
             public void onPlaceSelected(Place place) {
                 // TODO: Get info about the selected place.
                 Log.i("TAG", "Place: " + place.getName() + ", " + place.getId());
+                newCoords[0] = place.getLatLng();
             }
 
             @Override
             public void onError(Status status) {
                 // TODO: Handle the error.
                 Log.i("TAG", "An error occurred: " + status);
+            }
+        });
+
+        FloatingActionButton addPinBtn = view.findViewById(R.id.addPinButton);
+        addPinBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //autocompleteFragment.
+                EditText setNameEdit = view.findViewById(R.id.pinNameText);
+                EditText setDescriptionEdit = view.findViewById(R.id.pinDescriptionText);
+                Pin newPin = new Pin(setNameEdit.getText().toString(), setDescriptionEdit.getText().toString(), newCoords[0]);
+                ViewSetFragment.PinList.add(newPin);
+                ViewSetFragment.pinRecycler.getAdapter().notifyDataSetChanged();
+                MainActivity.MAINACTIVITY.switchFragment(new ViewSetFragment());
             }
         });
 
