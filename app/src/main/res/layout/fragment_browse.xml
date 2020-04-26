@@ -10,8 +10,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/browsePinSetRecyclerView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="557dp"
         android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,17 +19,27 @@
 
     <EditText
         android:id="@+id/browse_search"
-        android:layout_width="357dp"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="28dp"
         android:layout_marginBottom="12dp"
         android:autofillHints="@android:string/search_go"
         android:ems="10"
         android:hint="@android:string/search_go"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/browsePinSetRecyclerView"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageButton
+        android:id="@+id/searchButton"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="56dp"
+        android:src="@drawable/quantum_ic_search_grey600_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toEndOf="@+id/browse_search"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
