@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class SelectionAdapter extends RecyclerView.Adapter<PinSetViewHolder> {
+public class SelectionAdapter extends RecyclerView.Adapter<SelectionViewHolder> {
 
     private ArrayList<PinSet> pinSetList;
     public SelectionAdapter(ArrayList<PinSet> list){
@@ -19,20 +19,18 @@ public class SelectionAdapter extends RecyclerView.Adapter<PinSetViewHolder> {
 
     @NonNull
     @Override
-    public PinSetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SelectionViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View v = layoutInflater.inflate(R.layout.pin_set_view_holder, parent, false);
-        return new PinSetViewHolder(v);
+        View v = layoutInflater.inflate(R.layout.selection_view_holder, parent, false);
+        return new SelectionViewHolder(v);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PinSetViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SelectionViewHolder holder, int position) {
         final PinSet set = pinSetList.get(position);
         holder.image.setImageResource(set.getImage());
         holder.setname.setText(pinSetList.get(position).getName());
-        holder.pins.setText("" + pinSetList.get(position).getPins());
-        holder.followers.setText("" + pinSetList.get(position).getFollowers());
         holder.creator.setText(pinSetList.get(position).getCreator());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
