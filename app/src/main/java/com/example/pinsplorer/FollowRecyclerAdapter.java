@@ -31,19 +31,22 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull FollowViewHolder holder, final int position) {
-        final PinSet set = pinSetList.get(position);
-        holder.image.setImageResource(set.getImage());
-        holder.setname.setText(pinSetList.get(position).getName());
-        holder.pins.setText("" + pinSetList.get(position).getPins());
-        holder.followers.setText("" + pinSetList.get(position).getFollowers());
-        holder.creator.setText(pinSetList.get(position).getCreator());
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fragmentJump(set, position);
-            }
-        });
+        final PinSet set = pinSetList.get(position);
+        if (!set.getOwnership()) {
+            holder.image.setImageResource(set.getImage());
+            holder.setname.setText(pinSetList.get(position).getName());
+            holder.pins.setText("" + pinSetList.get(position).getPins());
+            holder.followers.setText("" + pinSetList.get(position).getFollowers());
+            holder.creator.setText(pinSetList.get(position).getCreator());
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    fragmentJump(set, position);
+                }
+            });
+        }
     }
 
     private void fragmentJump(PinSet mItemSelected, int position) {

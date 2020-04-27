@@ -79,6 +79,10 @@ class PinSet implements Parcelable {
         return image;
     }
 
+    public boolean getOwnership() {
+        return owned;
+    }
+
     public ArrayList<Pin> getPinList() {
         return pinList;
     }
