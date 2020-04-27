@@ -2,8 +2,10 @@ package com.example.pinsplorer;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -18,6 +20,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -75,7 +79,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         return view;
     }
 
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         // Add a marker at JHU,
@@ -90,6 +93,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
             googleMap.addMarker(new MarkerOptions().position((pin.getCoords())).title(pin.getName()));
         }
     }
+
 
     //convert to java
     /*
