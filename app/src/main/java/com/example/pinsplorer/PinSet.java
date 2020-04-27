@@ -13,6 +13,7 @@ class PinSet implements Parcelable {
     private int followers;
     private String creator;
     private ArrayList<Pin> pinList;
+    private boolean owned;
 
     public PinSet(String newName){
         name = newName;
@@ -25,14 +26,14 @@ class PinSet implements Parcelable {
 
     //constructor for hard-coded data
     public PinSet(String newName, int newPins, int newFollowers, String newCreator, int im,
-                  ArrayList<Pin> list) {
+                  ArrayList<Pin> list, boolean own) {
         name = newName;
         pins = newPins;
         followers = newFollowers;
         creator = newCreator;
         image = im;
         pinList = list;
-
+        owned = own;
     }
 
     protected PinSet(Parcel in) {

@@ -17,14 +17,13 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_sign_in);
+        setContentView(R.layout.activity_sign_in);
         Button btn = findViewById(R.id.signInButton);
         btn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                Intent intent = new Intent(v.getContext(), MainActivity.class);
                startActivity(intent);
-
             }
         });
     }
