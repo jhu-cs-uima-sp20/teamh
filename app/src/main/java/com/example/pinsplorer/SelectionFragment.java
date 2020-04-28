@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
@@ -19,6 +20,7 @@ import java.util.ArrayList;
 public class SelectionFragment extends Fragment {
 
     protected static RecyclerView SelectionRecycler;
+    protected static ArrayList<PinSet> CombinedList;
 
     public SelectionFragment() {
         // Required empty public constructor
@@ -34,8 +36,11 @@ public class SelectionFragment extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
+        CombinedList.addAll(SavedFragment.PinSetList);
+        CombinedList.addAll(FollowFragment.PinSetFollowedList);
+
         SelectionRecycler = getView().findViewById(R.id.selectionRecycler);
-        SelectionRecycler.setAdapter(new SelectionAdapter(SavedFragment.PinSetList));
+        SelectionRecycler.setAdapter(new SelectionAdapter(CombinedList));
         SelectionRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
 }
