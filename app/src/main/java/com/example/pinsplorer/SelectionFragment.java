@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class SelectionFragment extends Fragment {
 
     protected static RecyclerView SelectionRecycler;
-    protected static ArrayList<PinSet> CombinedList;
+    protected static ArrayList<PinSet> CombinedList = new ArrayList<>();
 
     public SelectionFragment() {
         // Required empty public constructor
@@ -36,6 +36,7 @@ public class SelectionFragment extends Fragment {
     @Override
     public void onStart(){
         super.onStart();
+        CombinedList.clear();
         CombinedList.addAll(SavedFragment.PinSetList);
         CombinedList.addAll(FollowFragment.PinSetFollowedList);
 

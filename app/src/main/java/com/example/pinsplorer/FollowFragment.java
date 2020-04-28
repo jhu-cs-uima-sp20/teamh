@@ -31,17 +31,17 @@ public class FollowFragment extends Fragment {
 
     protected static ArrayList<Pin> CampusPins = new ArrayList<>(Arrays.asList(
             new Pin("Gilman", false,
-                    "A place to study", R.drawable.gilman, new LatLng(39.3250, -76.6360)),
+                    "A place to study", R.drawable.gilman, new LatLng(39.3289, -76.6216)),
             new Pin("Malone", true,
-                    "The JHU Computer Science Building", R.drawable.malone, new LatLng(39.3350, -76.6300))));
+                    "The JHU Computer Science Building", R.drawable.malone, new LatLng(39.3262, -76.6209))));
     protected static ArrayList<Pin> DefaultPins = new ArrayList<>(Arrays.asList(
             new Pin("Inner Harbor", false,
-                    "A place with lots of boats to look at", R.drawable.innerharbor, new LatLng(39.3270, -76.6380)),
+                    "A place with lots of boats to look at", R.drawable.innerharbor, new LatLng(39.2858, -76.6131)),
             new Pin("Market", true,
-                    "This market has really cool stuff!", R.drawable.market, new LatLng(39.3220, -76.6310)),
+                    "This market has really cool stuff!", R.drawable.market, new LatLng(39.2838, -76.6351)),
             new Pin("Museum", false,
                     "This museum changes their exhibits once every season, so its a" +
-                            "great place to go often!", R.drawable.museum, new LatLng(39.3250, -76.6320))));
+                            "great place to go often!", R.drawable.museum, new LatLng(39.2878, -76.6161))));
 
     protected static ArrayList<PinSet> PinSetFollowedList =
             new ArrayList<>(

@@ -89,7 +89,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(jhu, 14f));
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(jhu));
 
-        for (Pin pin : SavedFragment.PinSetList.get(index).getPinList()) {
+        for (Pin pin : SelectionFragment.CombinedList.get(index).getPinList()) {
             googleMap.addMarker(new MarkerOptions().position((pin.getCoords())).title(pin.getName()));
         }
     }
