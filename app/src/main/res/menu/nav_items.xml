@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/saved_pinsets"
-        android:icon="@android:drawable/alert_light_frame"
+        android:icon="@drawable/ic_check_circle_black_24dp"
         android:title="@string/menu_saved_pinsets" />
     <item
         android:id="@+id/follow_pinsets"
-        android:icon="@android:drawable/arrow_down_float"
+        android:icon="@android:drawable/btn_star_big_on"
         android:title="@string/menu_follow_pinsets_pic" />
 
     <item
         android:id="@+id/browse_pinsets"
-        android:icon="@android:drawable/ic_menu_call"
+        android:icon="@android:drawable/ic_menu_search"
         android:title="@string/menu_browse_pinsets_pic" />
     <item
         android:id="@+id/map_nav"
-        android:icon="@android:drawable/alert_light_frame"
+        android:icon="@android:drawable/ic_dialog_map"
         android:title="@string/menu_map_pic" />
 </menu>
