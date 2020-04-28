@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/followed_search"
+        android:id="@+id/saved_search"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -24,7 +24,7 @@
         android:ems="10"
         android:hint="@android:string/search_go"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/pinSetRecyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/followedRecyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
