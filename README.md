@@ -24,7 +24,7 @@ Michael:
 For this sprint, I was focused on implementing the geolocation and map functionality of our app. I used the Google Places API to grab the coordinates from any location that the user searches up and saved these to the corresponding pin. I then used the Google Maps API to display the pins (of one pinset at a time) for the user. 
 
 Adam: 
-For this sprint I was working on firebase and local data storage to track user logins and to keep pin and pinset info. These features are still a work in progress. 
+For this sprint I was working on firebase and local data storage to track user logins and to keep pin and pinset info. It took me longer than expected to figure out how to interface the java and the SQL but these features are expected to be implemented in the near future. 
 
 Sprint 2 Meeting Notes:
 4/13: Assigned individual tasks for sprint two. Michael was assigned to implementing the map functionality, Ayden to deleting and marking pins/pinsets as viewed, AJ to implementing the search function/browsing public pinsets tab, Adam to implementing Firebase functionality
