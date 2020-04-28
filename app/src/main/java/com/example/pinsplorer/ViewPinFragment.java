@@ -66,7 +66,7 @@ public class ViewPinFragment extends Fragment {
         description.setText(pin.getDescription());
         TextView visited = view.findViewById(R.id.pinVisitView);
         if (pin.getVisited()) {
-            visited.setText("Visisted");
+            visited.setText("Visited");
         }
         else {
             visited.setText("Unvisited");

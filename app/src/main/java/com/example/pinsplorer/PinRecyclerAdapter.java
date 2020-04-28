@@ -53,6 +53,7 @@ public class PinRecyclerAdapter extends RecyclerView.Adapter<PinViewHolder> {
             @Override
             public void onClick(View view) {
                 pin.setVisited(true);
+                holder.markButton.setVisibility(View.INVISIBLE);
             }
         });
     }
