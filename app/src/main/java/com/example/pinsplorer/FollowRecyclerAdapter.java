@@ -13,12 +13,12 @@ import java.util.ArrayList;
 
 public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder> {
 
-    private ArrayList<PinSet> pinSetList;
+    private ArrayList<PinSet> pinSetFollowedList;
     private PinSet recentlyDeletedPinSet;
     private int recentlyDeletedPinSetPosition;
 
     public FollowRecyclerAdapter(ArrayList<PinSet> list) {
-        pinSetList = list;
+        pinSetFollowedList = list;
     }
 
     @NonNull
@@ -32,21 +32,19 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
     @Override
     public void onBindViewHolder(@NonNull FollowViewHolder holder, final int position) {
 
-        final PinSet set = pinSetList.get(position);
-        if (!set.getOwnership()) {
-            holder.image.setImageResource(set.getImage());
-            holder.setname.setText(pinSetList.get(position).getName());
-            holder.pins.setText("" + pinSetList.get(position).getPins());
-            holder.followers.setText("" + pinSetList.get(position).getFollowers());
-            holder.creator.setText(pinSetList.get(position).getCreator());
+        final PinSet set = pinSetFollowedList.get(position);
+        holder.image.setImageResource(set.getImage());
+        holder.setname.setText(pinSetFollowedList.get(position).getName());
+        holder.pins.setText("" + pinSetFollowedList.get(position).getPins());
+        holder.followers.setText("" + pinSetFollowedList.get(position).getFollowers());
+        holder.creator.setText(pinSetFollowedList.get(position).getCreator());
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    fragmentJump(set, position);
-                }
-            });
-        }
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentJump(set, position);
+            }
+        });
     }
 
     private void fragmentJump(PinSet mItemSelected, int position) {
@@ -60,13 +58,13 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
 
     @Override
     public int getItemCount() {
-        return pinSetList.size();
+        return pinSetFollowedList.size();
     }
 
     public void deleteItem(int position) {
-        recentlyDeletedPinSet = pinSetList.get(position);
+        recentlyDeletedPinSet = pinSetFollowedList.get(position);
         recentlyDeletedPinSetPosition = position;
-        pinSetList.remove(position);
+        pinSetFollowedList.remove(position);
         notifyItemRemoved(position);
         showUndoSnackbar();
     }
@@ -80,7 +78,7 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
     }
 
     private void undoDelete() {
-        pinSetList.add(recentlyDeletedPinSetPosition,
+        pinSetFollowedList.add(recentlyDeletedPinSetPosition,
                 recentlyDeletedPinSet);
         notifyItemInserted(recentlyDeletedPinSetPosition);
     }

@@ -7,7 +7,7 @@
     tools:context=".FollowFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/pinSetRecyclerView"
+        android:id="@+id/followedRecyclerView"
         android:layout_width="0dp"
         android:layout_height="555dp"
         android:layout_marginTop="120dp"

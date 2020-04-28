@@ -57,14 +57,11 @@ public class SavedFragment extends Fragment {
                     Arrays.asList(
                             new PinSet("Baltimore Eats", 17, 32, "Brian",
                                     R.drawable.restaurant, DefaultPins, true),
-                            new PinSet("Baltimore Tourist Attractions", DefaultPins.size(), 71, "Me",
-                                    R.drawable.tourists, DefaultPins, false),
-                            new PinSet("Campus Buildings", CampusPins.size(), 360, "Johns Hopkins",
-                                    R.drawable.gilman, CampusPins, false),
                             new PinSet("Cool Museums", 8, 27, "Me",
                                     R.drawable.museum, DefaultPins, true),
                             new PinSet("Great Sidewalks <3", 9, 14, "Me",
                                     R.drawable.sidewalk, DefaultPins, true)));
+
 
     public SavedFragment() {
         // Required empty public constructor
