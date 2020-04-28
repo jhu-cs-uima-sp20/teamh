@@ -29,7 +29,7 @@ public class SelectionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment_view_followed_set
         return inflater.inflate(R.layout.fragment_selection, container, false);
     }
 

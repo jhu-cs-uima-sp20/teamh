@@ -54,7 +54,7 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
     }
 
     private void fragmentJump(PinSet mItemSelected, int position) {
-        ViewSetFragment frag = new ViewSetFragment();
+        ViewFollowedSetFragment frag = new ViewFollowedSetFragment();
         Bundle bundle = new Bundle();
         bundle.putParcelable("item_selected_key", mItemSelected);
         bundle.putInt("item_index", position);

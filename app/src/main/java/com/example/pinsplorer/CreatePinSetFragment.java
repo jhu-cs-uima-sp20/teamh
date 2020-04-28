@@ -20,11 +20,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link CreatePinSetFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * create an instance of this fragment_view_followed_set.
  */
 public class CreatePinSetFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    // the fragment_view_followed_set initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private ImageButton mImagebtn;
@@ -41,11 +41,11 @@ public class CreatePinSetFragment extends Fragment {
 
     /**
      * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
+     * this fragment_view_followed_set using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CreatePinSetFragment.
+     * @return A new instance of fragment_view_followed_set CreatePinSetFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static CreatePinSetFragment newInstance(String param1, String param2) {
@@ -69,7 +69,7 @@ public class CreatePinSetFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment_view_followed_set
         final View view = inflater.inflate(R.layout.fragment_create_pin_set, container, false);
 
         mImagebtn = (ImageButton) view.findViewById(R.id.imageButton);

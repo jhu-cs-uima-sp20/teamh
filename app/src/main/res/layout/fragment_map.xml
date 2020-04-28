@@ -16,6 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank fragment_view_followed_set layout -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

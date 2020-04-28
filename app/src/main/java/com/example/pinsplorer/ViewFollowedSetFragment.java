@@ -22,7 +22,7 @@ import java.util.Arrays;
  * Use the {@link ViewSetFragment#newInstance} factory method to
  * create an instance of this fragment_view_followed_set.
  */
-public class ViewSetFragment extends Fragment {
+public class ViewFollowedSetFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment_view_followed_set initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -41,7 +41,7 @@ public class ViewSetFragment extends Fragment {
 //                            new Pin("Farmer's Market", "Not Visited", "Great spot for fresh, locally sourced produce", R.drawable.market),
 //                            new Pin("Miracle on 34th", "Visited 12/21/19", "Holiday decorations, unique sculptures, and flashy lights", R.drawable.miracle)));
 
-    public ViewSetFragment() {
+    public ViewFollowedSetFragment() {
         // Required empty public constructor
     }
 
@@ -75,15 +75,8 @@ public class ViewSetFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment_view_set
-        View view = inflater.inflate(R.layout.fragment_view_set, container, false);
-        FloatingActionButton createPinBtn = view.findViewById(R.id.createPinBtn);
-        createPinBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.MAINACTIVITY.switchFragment(new CreatePinFragment());
-            }
-        });
+        // Inflate the layout for this fragment_view_followed_set
+        View view = inflater.inflate(R.layout.fragment_view_followed_set, container, false);
         return view;
     }
 
