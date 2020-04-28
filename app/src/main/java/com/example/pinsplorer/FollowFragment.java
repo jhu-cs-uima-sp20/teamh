@@ -28,7 +28,7 @@ public class FollowFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     protected static RecyclerView PinSetRecycler;
-
+/*
     protected static ArrayList<Pin> CampusPins = new ArrayList<>(Arrays.asList(
             new Pin("Gilman", false,
                     "A place to study", R.drawable.gilman, new LatLng(39.3289, -76.6216)),
@@ -41,15 +41,15 @@ public class FollowFragment extends Fragment {
                     "This market has really cool stuff!", R.drawable.market, new LatLng(39.2838, -76.6351)),
             new Pin("Museum", false,
                     "This museum changes their exhibits once every season, so its a" +
-                            "great place to go often!", R.drawable.museum, new LatLng(39.2878, -76.6161))));
+                            "great place to go often!", R.drawable.museum, new LatLng(39.2878, -76.6161))));*/
 
     protected static ArrayList<PinSet> PinSetFollowedList =
             new ArrayList<>(
                     Arrays.asList(
-                            new PinSet("Campus Buildings", CampusPins.size(), 360, "Johns Hopkins",
-                                    R.drawable.gilman, CampusPins, false),
-                            new PinSet("Baltimore Tourist Attractions", DefaultPins.size(), 71, "Me",
-                                    R.drawable.tourists, DefaultPins, false)));
+                            new PinSet("Cool Museums", 8, 27, "Lily",
+                                    R.drawable.museum, SavedFragment.DefaultPins, true),
+                            new PinSet("Baltimore Tourist Attractions", SavedFragment.DefaultPins.size(), 71, "Brian",
+                                    R.drawable.tourists, SavedFragment.DefaultPins, false)));
 
 
     // TODO: Rename and change types of parameters
