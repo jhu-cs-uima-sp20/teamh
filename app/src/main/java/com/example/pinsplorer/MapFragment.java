@@ -21,6 +21,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 /**
@@ -84,83 +85,19 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         // Add a marker at JHU,
         // and move the map's camera to the same location.
         LatLng jhu = new LatLng(39.3299, -76.6205);
-        googleMap.addMarker(new MarkerOptions().position(jhu)
-                .title("Johns Hopkins University"));
+        //googleMap.addMarker(new MarkerOptions().position(jhu)
+                //.title("Johns Hopkins University"));
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(jhu, 14f));
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(jhu));
-
-        for (Pin pin : SelectionFragment.CombinedList.get(index).getPinList()) {
+        ArrayList<Pin> pins = SelectionFragment.CombinedList.get(index).getPinList();
+        for (Pin pin : pins) {
             googleMap.addMarker(new MarkerOptions().position((pin.getCoords())).title(pin.getName()));
+        }
+        if (!pins.isEmpty()) {
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pins.get(0).getCoords(), 14f));
         }
     }
 
 
-    //convert to java
-    /*
-    private void setUpMap() {
-        Activity act = getActivity();
-        if (ActivityCompat.checkSelfPermission(
-                act,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-        ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                    act,
-                    new (android.Manifest.permission.ACCESS_FINE_LOCATION),
-                    1
-            )
-            return;
-        }
-
-        map.isMyLocationEnabled = true
-
-        fusedLocationClient.lastLocation.addOnSuccessListener(act) { location ->
-            // Got last known location. In some rare situations this can be null.
-            if (location != null) {
-                lastLocation = location
-                val currentLatLng = LatLng(location.latitude, location.longitude)
-                placeMarkerOnMap(currentLatLng)
-                map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
-            }
-        }
-
-
-       if (ActivityCompat.checkSelfPermission(
-                this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-               activity!!,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-                MapsActivity.LOCATION_PERMISSION_REQUEST_CODE
-            )
-            return
-        }
-        // if (ActivityCompat.checkSelfPermission(getActivity(),android.Manifest.permission.ACCESS_FINE_LOCATION)
-        //  == PackageManager.PERMISSION_GRANTED) {
-
-            map.isMyLocationEnabled = true
-
-            fusedLocationClient.lastLocation.addOnSuccessListener(this) { location ->
-                // Got last known location. In some rare situations this can be null.
-                if (location != null) {
-                    lastLocation = location
-                    val currentLatLng = LatLng(location.latitude, location.longitude)
-                    placeMarkerOnMap(currentLatLng)
-                    map.animateCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, 12f))
-                }
-
-        //    }
-        }
-        val activity = context as Activity
-        if (ContextCompat.checkSelfPermission(activity, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            map.setMyLocationEnabled(true)
-
-            val cameraPosition = CameraPosition.Builder().target(LatLng(lastLocation.latitude, lastLocation.longitude)).zoom(17.0.toFloat()).build()
-            val cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition)
-            map.moveCamera(cameraUpdate)
-        }
-    } */
 
 }

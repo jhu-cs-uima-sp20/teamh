@@ -55,7 +55,7 @@ public class SavedFragment extends Fragment {
     protected static ArrayList<PinSet> PinSetList =
             new ArrayList<>(
                     Arrays.asList(
-                            new PinSet("Baltimore Eats", 17, 32, "Brian",
+                            new PinSet("Baltimore Eats", 17, 32, "Me",
                                     R.drawable.restaurant, DefaultPins, true),
                             new PinSet("Cool Museums", 8, 27, "Me",
                                     R.drawable.museum, DefaultPins, true),
