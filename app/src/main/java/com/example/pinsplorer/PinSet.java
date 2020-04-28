@@ -64,7 +64,7 @@ class PinSet implements Parcelable {
     }
 
     public int getPins() {
-        return pins;
+        return pinList.size();
     }
 
     public int getFollowers() {
