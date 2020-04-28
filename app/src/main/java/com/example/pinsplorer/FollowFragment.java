@@ -98,9 +98,7 @@ public class FollowFragment extends Fragment {
     public void onStart(){
         super.onStart();
         PinSetRecycler = getView().findViewById(R.id.followedRecyclerView);
-        ItemTouchHelper deleteSwipe = new ItemTouchHelper(new DeleteSwipeController(PinSetFollowedList, PinSetRecycler));
-        deleteSwipe.attachToRecyclerView(PinSetRecycler);
-        PinSetRecycler.setAdapter(new PinSetRecyclerAdapter(PinSetFollowedList));
+        PinSetRecycler.setAdapter(new FollowRecyclerAdapter(PinSetFollowedList));
         PinSetRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
     }
 }

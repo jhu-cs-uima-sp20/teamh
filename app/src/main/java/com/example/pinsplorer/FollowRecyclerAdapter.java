@@ -1,5 +1,6 @@
 package com.example.pinsplorer;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +39,12 @@ public class FollowRecyclerAdapter extends RecyclerView.Adapter<FollowViewHolder
         holder.pins.setText("" + pinSetFollowedList.get(position).getPins());
         holder.followers.setText("" + pinSetFollowedList.get(position).getFollowers());
         holder.creator.setText(pinSetFollowedList.get(position).getCreator());
-
+        holder.btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteItem(position);
+            }
+        });
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -37,7 +37,7 @@ public class PinSetRecyclerAdapter extends RecyclerView.Adapter<PinSetViewHolder
         holder.pins.setText("" + pinSetList.get(position).getPins());
         holder.followers.setText("" + pinSetList.get(position).getFollowers());
         holder.creator.setText(pinSetList.get(position).getCreator());
-
+        holder.followButton.setVisibility(View.INVISIBLE);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
